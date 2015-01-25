@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Description of PostAdmin
+ * Description of UserAdmin
  *
  * @author raffa
  */
@@ -12,15 +13,13 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class PostAdmin extends Admin
+class UserAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title')
-            ->add('author')
-            ->add('content') //if no type is specified, SonataAdminBundle tries to guess it
+            ->add('username')
         ;
     }
 
@@ -28,8 +27,7 @@ class PostAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('title')
-            ->add('author')
+            ->add('username')
         ;
     }
 
@@ -37,9 +35,8 @@ class PostAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('title')
-            ->add('slug')
-            ->add('author')
+            ->addIdentifier('username')
+            ->add('email')
         ;
     }
 }

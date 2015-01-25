@@ -5,7 +5,21 @@ services:
             - { name: sonata.admin, manager_type: orm, group: "Content", label: "Post" }
         arguments:
             - ~
-            - Acme\UserBundle\Entity\Post
+            - Acme\BlogBundle\Entity\Post
+            - SonataAdminBundle:CRUD
             - ~
         calls:
-            - [ setTranslationDomain, [AcmeDemoBundle]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+            #- [ setTranslationDomain, [AcmeBlogBundle, AcmeUserBundle]]
+    
+    sonata.admin.user:
+        class: Acme\UserBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "User", label: "Username" }
+        arguments:
+            - ~
+            - Acme\UserBundle\Entity\User
+            - SonataAdminBundle:CRUD
+            - ~
+        calls:
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]

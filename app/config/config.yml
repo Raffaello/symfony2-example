@@ -95,11 +95,57 @@ fos_user:
         address: noreply@UserBundle.org
         sender_name: Acme User Bundle
 
+sonata_core: 
+    #flashmessage:
+    #    success:
+    #        types:
+    #            - { type: my_custom_bundle_success, domain: MyCustomBundle }
+    #            - { type: my_other_bundle_success, domain: MyOtherBundle }
+    #    warning:
+    #        types:
+    #            - { type: my_custom_bundle_warning, domain: MyCustomBundle }
+    #            - { type: my_other_bundle_warning } 
+                # if nothing is specified, sets SonataCoreBundle by default
+    #    error:
+    #        css_class: danger 
+            # optionally, a CSS class can be defined
+    #        types:
+    #            - { type: my_custom_bundle, domain: MyCustomBundle }
+    #    custom_type: 
+        # You can add custom types too
+    #        types:
+    #            - { type: custom_bundle_type, domain: MyCustomBundle }
+
 sonata_block:
     default_context: [cms]
     blocks:
         sonata.admin.block.admin_list:
             context: [admin]
+        sonata.block.service.text:
+        sonata.block.service.rss:
             
-#imports:
-#    - { resource: @AcmeUserBundle/Resources/config/admin.yml }
+sonata_admin:
+    title: Administration
+    #title_logo: bundles/acmeuser/images/logo.png
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+            -
+                position: right
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <h2>Welcome to the Sonata Admin</h2>
+                        <p>This is a <code>sonata.block.service.text</code> from the Block
+                        Bundle, you can create and add new block in these area by configuring
+                        the <code>sonata_admin</code> section.</p> <br /> For instance, here
+                        a RSS feed parser (<code>sonata.block.service.rss</code>):
+            -
+                position: right
+                type: sonata.block.service.rss
+                settings:
+                    title: Sonata Project's Feeds
+                    url: http://sonata-project.org/blog/archive.rss
+        
