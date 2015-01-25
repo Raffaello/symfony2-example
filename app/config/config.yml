@@ -58,9 +58,12 @@ doctrine:
         #   3. Uncomment next line:
         #     path:     "%database_path%"
         path:     %database_path%
+        types:
+            json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -72,10 +75,12 @@ swiftmailer:
     disable_delivery: true
     delivery_address: raffaellobertini@gmail.com
 
+
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Acme\UserBundle\Entity\User
+    #user_class:     Application\Sonata\UserBundle\Entity\User
     service:
         mailer: fos_user.mailer.twig_swift
     registration:
@@ -94,6 +99,17 @@ fos_user:
     from_email:
         address: noreply@UserBundle.org
         sender_name: Acme User Bundle
+        
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager                    
+        # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
+
+    service:
+        user_manager: sonata.user.orm.user_manager                      
+        # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
+
+
 
 sonata_core: 
     #flashmessage:
@@ -123,7 +139,9 @@ sonata_block:
             context: [admin]
         sonata.block.service.text:
         sonata.block.service.rss:
-            
+        sonata.user.block.menu:
+        sonata.user.block.account:
+        
 sonata_admin:
     title: Administration
     #title_logo: bundles/acmeuser/images/logo.png
@@ -148,4 +166,7 @@ sonata_admin:
                 settings:
                     title: Sonata Project's Feeds
                     url: http://sonata-project.org/blog/archive.rss
-        
+
+sonata_user:
+    
+    

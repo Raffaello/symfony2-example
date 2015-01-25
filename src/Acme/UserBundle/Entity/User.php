@@ -8,8 +8,9 @@
 
 namespace Acme\UserBundle\Entity;
 
-use FOS\UserBundle\Entity\User as BaseUser;
+//use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Sonata\UserBundle\Entity\BaseUser;
 
 /**
  * @ORM\Entity
