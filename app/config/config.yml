@@ -63,6 +63,14 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        #entity_managers:
+        #    default:
+        #        mappings:
+        #            ApplicationSonataUserBundle: ~
+        #            SonataUserBundle: ~
+        #            FOSUserBundle: ~                                    
+                    # If SonataUserBundle extends it
+ 
         
 
 # Swiftmailer Configuration
@@ -74,7 +82,6 @@ swiftmailer:
     spool:     { type: memory }
     disable_delivery: true
     delivery_address: raffaellobertini@gmail.com
-
 
 fos_user:
     db_driver: orm
