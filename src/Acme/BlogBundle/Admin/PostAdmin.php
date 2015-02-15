@@ -5,7 +5,7 @@
  * @author raffa
  */
 
-namespace Acme\UserBundle\Admin;
+namespace Acme\BlogBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;

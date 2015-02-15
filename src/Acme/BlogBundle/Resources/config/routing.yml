@@ -1,8 +1,8 @@
-acme_blog_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: AcmeBlogBundle:Default:index }
+#acme_blog_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: AcmeBlogBundle:Default:index }
 
-AcmeBlogBundle_post:
-    resource: "@AcmeBlogBundle/Resources/config/routing/post.yml"
-    prefix:   /post
+#AcmeBlogBundle_post:
+#    resource: "@AcmeBlogBundle/Resources/config/routing/post.yml"
+#    prefix:   /post
 

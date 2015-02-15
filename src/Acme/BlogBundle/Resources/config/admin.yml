@@ -1,0 +1,12 @@
+services:
+    sonata.admin.post:
+        class: Acme\BlogBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Post" }
+        arguments:
+            - ~
+            - Acme\BlogBundle\Entity\Post
+            - SonataAdminBundle:CRUD
+            - ~
+        calls:
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]

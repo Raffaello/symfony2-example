@@ -3,7 +3,7 @@ acme_blog:
     prefix:   /admin/acme/blog
 
 acme_user:
-    resource: "@AcmeUserBundle/Resources/config/routing.yml"
+    resource: "@ApplicationSonataUserBundle/Resources/config/routing.yml"
     prefix:   /
     
 #fos_user_security:

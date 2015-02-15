@@ -52,4 +52,9 @@ class PostControllerTest extends WebTestCase
     }
 
     */
+    
+    public function testSimple()
+    {
+        
+    }
 }

@@ -1,7 +1,8 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: @AcmeUserBundle/Resources/config/admin.yml }
+    #- { resource: @AcmeUserBundle/Resources/config/admin.yml }
+    - { resource: @AcmeBlogBundle/Resources/config/admin.yml }
     
 framework:
     #esi:             ~
@@ -86,8 +87,8 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Acme\UserBundle\Entity\User
-    #user_class:     Application\Sonata\UserBundle\Entity\User
+    #user_class: Acme\UserBundle\Entity\User
+    user_class: Application\Sonata\UserBundle\Entity\User
     service:
         mailer: fos_user.mailer.twig_swift
     registration:
@@ -204,5 +205,5 @@ sonata_user:
             #- { route: 'sonata_customer_addresses', label: 'link_list_addresses', domain: 'SonataCustomerBundle'}
             - { route: 'sonata_user_profile_edit_authentication', label: 'link_edit_authentication', domain: 'SonataUserBundle'}
             #- { route: 'sonata_order_index', label: 'order_list', domain: 'SonataOrderBundle'}
-
+            - { route: 'sonata_admin_redirect', label: 'Admin section', domain: 'SonataAdminBundle' }
     
