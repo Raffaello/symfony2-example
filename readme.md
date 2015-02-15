@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Raffaello/symfony2-example.svg)](https://travis-ci.org/Raffaello/symfony2-example)
+
 # Symfony2 Example
 
 Is a boilerplate.
