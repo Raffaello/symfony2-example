@@ -95,18 +95,18 @@ fos_user:
         confirmation:
             from_email:
                 address: registration@UserBundle.org
-                sender_name: Acme User Bundle registration
+                sender_name: User Bundle registration
             #enabled: true
     resetting:
         email:
             from_email:
                 address: resetting@UserBundle.org
-                sender_name: Acme User Bundle resetting
-            template: AcmeUserBundle:User:resetting.email.twig
+                sender_name: User Bundle resetting
+            template: ApplicationSonataUserBundle:User:resetting.email.twig
         
     from_email:
         address: noreply@UserBundle.org
-        sender_name: Acme User Bundle
+        sender_name: User Bundle
         
     group:
         group_class:   Application\Sonata\UserBundle\Entity\Group

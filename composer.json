@@ -27,7 +27,8 @@
         "sonata-project/user-bundle": "~2.2",
         "knplabs/knp-menu-bundle": "1.1.*",
         "mopa/bootstrap-bundle": "~2.3",
-        "sonata-project/page-bundle": "~2.3"
+        "sonata-project/page-bundle": "~2.3",
+        "satooshi/php-coveralls": "0.6.*"
     },
     
     "require-dev": {
