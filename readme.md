@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Raffaello/symfony2-example.svg)](https://travis-ci.org/Raffaello/symfony2-example)
+[![Coverage Status](https://coveralls.io/repos/Raffaello/symfony2-example/badge.svg)](https://coveralls.io/r/Raffaello/symfony2-example)
 
 # Symfony2 Example
 
